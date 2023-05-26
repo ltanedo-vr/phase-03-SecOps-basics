@@ -1,0 +1,55 @@
+[
+      {
+        "ConfigRuleName": "s3-bucket-logging-enabled",
+        "TargetType": "SSM_DOCUMENT",
+        "TargetId": "AWS-ConfigureS3BucketLogging",
+        "TargetVersion": "1",
+        "Parameters": {
+          "AutomationAssumeRole": {
+            "StaticValue": {
+              "Values": [
+                "arn:aws:iam::057361781086:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig"
+              ]
+            }
+          },
+          "GranteeType": {
+            "StaticValue": {
+              "Values": [
+                "CanonicalUser "
+              ]
+            }
+          },
+          "BucketName": {
+            "StaticValue": {
+              "Values": [
+                "config-bucket-057361781086"
+              ]
+            }
+          },
+          "GrantedPermission": {
+            "StaticValue": {
+              "Values": [
+                "WRITE"
+              ]
+            }
+          },
+          "TargetBucket": {
+            "StaticValue": {
+              "Values": [
+                "config-bucket-057361781086"
+              ]
+            }
+          }
+        },
+        "Automatic": true,
+        "ExecutionControls": {
+          "SsmControls": {
+            "ConcurrentExecutionRatePercentage": 2,
+            "ErrorPercentage": 5
+          }
+        },
+        "MaximumAutomaticAttempts": 5,
+        "RetryAttemptSeconds": 60,
+        "Arn": "arn:aws:config:us-east-2:057361781086:remediation-configuration/s3-bucket-logging-enabled/351a7a03-b4f2-489d-b68e-ce26d281ccab"
+      }
+    ]

@@ -1,0 +1,16 @@
+{
+    "ConfigRuleName": "s3-bucket-logging-enabled", 
+    "Description": "Checks if logging is enabled for your S3 buckets. The rule is NON_COMPLIANT if logging is not enabled.", 
+    "Scope": {
+        "ComplianceResourceTypes": ["AWS::S3::Bucket"]
+    }, 
+    "Source": {
+        "Owner": "AWS", 
+        "SourceIdentifier": "S3_BUCKET_LOGGING_ENABLED"
+    }, 
+    "InputParameters": "{}", 
+    "ConfigRuleState": "ACTIVE", 
+    "EvaluationModes": [
+        {"Mode": "DETECTIVE"}
+    ]
+}

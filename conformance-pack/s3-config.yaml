@@ -1,0 +1,39 @@
+#########################
+#   Conformance Pack:
+#     - Lloyd Tanedo
+#########################
+
+Resources:
+
+  CheckLoggingEnabled:
+    Properties:
+      ConfigRuleName: s3-bucket-logging-enabled
+      Scope:
+        ComplianceResourceTypes:
+        - AWS::S3::Bucket
+      Source:
+        Owner: AWS
+        SourceIdentifier: S3_BUCKET_LOGGING_ENABLED
+    Type: AWS::Config::ConfigRule
+
+  CheckVersioningEnabled:
+    Properties:
+      ConfigRuleName: s3-bucket-versioning-enabled
+      Scope:
+        ComplianceResourceTypes:
+        - AWS::S3::Bucket
+      Source:
+        Owner: AWS
+        SourceIdentifier: S3_BUCKET_VERSIONING_ENABLED
+    Type: AWS::Config::ConfigRule
+    
+  CheckLifecyclePolicyCheck:
+    Properties:
+      ConfigRuleName: s3-version-lifecycle-policy-check
+      Scope:
+        ComplianceResourceTypes:
+        - AWS::S3::Bucket
+      Source:
+        Owner: AWS
+        SourceIdentifier: S3_VERSION_LIFECYCLE_POLICY_CHECK
+    Type: AWS::Config::ConfigRule
